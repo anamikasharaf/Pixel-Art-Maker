@@ -46,7 +46,7 @@ function makeGrid(formInput) {
   }
 
   // adding an eventlisten upon click on the grid
-  myCustomCanvas.addEventListener('click', respondToClick(evt){
+  myCustomCanvas.addEventListener('click', function(evt){
     evt.target.color = coPic;
   });
 
