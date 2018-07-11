@@ -18,4 +18,8 @@
  
  The style page
  
+ A Preview of the fun Pixel Art Maker
+ 
+ ![PixelArtMaker](/Pixel-Art-Maker/PixelArtMaker.png?raw=true "PixelArtMaker")
+ 
  
