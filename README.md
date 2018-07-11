@@ -2,7 +2,7 @@
  One-page web application that lets users draw a pixel image on a customizable panel.
  
  This application will let user make a custom grid by adding height and width of the grid. A color is picked by the user to make the pixel art. 
- User can also choose a different color while making this art at any given point. A simple double click on a colored cell will make the cell clean, to be painted again.
+ User can also choose a different color while making this art at any given point. A simple double click on a colored cell will make the cell clean, and ready to be painted again.
  
  This application has following three files.
  
