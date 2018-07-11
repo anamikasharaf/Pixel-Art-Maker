@@ -20,6 +20,6 @@
  
  A Preview of the fun Pixel Art Maker
  
- ![PixelArtMaker](/Pixel-Art-Maker/PixelArtMaker.png?raw=true "PixelArtMaker")
+ ![image](https://github.com/anamikasharaf/Pixel-Art-Maker/blob/master/PixelArtMaker.png)
  
  
