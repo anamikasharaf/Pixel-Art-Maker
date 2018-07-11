@@ -1,36 +1,32 @@
-  // creating tbody element
-  const tbody = document.createElement( 'tbody' );
-  // adding tbody element to "pixelCanvas" table
-  document.getElementById( 'pixelCanvas' ).appendChild( tbody );
+  // creating a variable to access table tag
+  let table = document.getElementById( 'pixelCanvas' );
 
   // assigning chosen color to colorPicker
   let colorPicker = document.getElementById( 'colorPicker' );
 
   function makeGrid(tableHeight, tableWidth) {
 
-    //creating empty grid first
-    let grid = '';
-
     // creating custom table with width and height given in the form
     for (let i=0; i<tableHeight; i++)
     {
       // creating a table row, <tr> element
-      grid += '<tr>';
+      let row = document.createElement('tr');
 
       for (let j=0; j<tableWidth; j++)
       {
         // creating a <td> element, cell
-        grid += '<td></td>';
+        let col = document.createElement('td');
+        // appending it to tr element
+        row.appendChild(col);
       }
 
-      //closing the row
-      grid += '</tr>';
+      //appending tr element to the table
+      table.appendChild(row);
     }
 
-    //print console to check
+    //printing size of the grid to console
     console.log( 'inside makeGrid: ', tableWidth, tableHeight );
-    //adding the grid to tbody
-    document.getElementsByTagName('tbody')[0].innerHTML = grid;
+    
   };
 
   document.getElementById('colorPicker').addEventListener('change', function() {
