@@ -1,53 +1,55 @@
+  // creating tbody element
+  const tbody = document.createElement( 'tbody' );
+  // adding tbody element to "pixelCanvas" table
+  document.getElementById( 'pixelCanvas' ).appendChild( tbody );
 
-// collect form input
-function formInput() {
+  // assigning chosen color to colorPicker
+  let colorPicker = document.getElementById( 'colorPicker' );
 
-  //accessing the form with name sizePicker
-  const dimension = document.forms.sizePicker;
+  function makeGrid(tableHeight, tableWidth) {
 
-  //picking out the form data (height, width and color)
-  const height = dimension.height;
-  const width = dimension.width;
-  const colorPicked = dimension.colorPick;
+    //creating empty grid first
+    let grid = '';
 
-  //returning all form data
-  const dataReturn = [height,width,colorPicked];
-  return dataReturn;
-  // alert(height);
-
-}
-
-// When size is submitted by the user, call makeGrid()
-
-function makeGrid(formInput) {
-
-  // calling formInput for form data
-  const [ht,wt,coPic] = formInput();
-
-  //accesing the table with id="pixelCanvas"
-  const myCustomCanvas = document.querySelector('#pixelCanvas');
-
-  // creating custom table with width and height given in the form
-  for (let i=0; i<ht; i++)
-  {
-    // creating a table row, <tr> element
-    let row = document.createElement("tr");
-
-    for (let j=0; j<wt; j++)
+    // creating custom table with width and height given in the form
+    for (let i=0; i<tableHeight; i++)
     {
-      // creating a <td> element, cell
-      let cell = document.createElement("td");
-      // appending it to the row
-      row.appendChild(cell);
+      // creating a table row, <tr> element
+      grid += '<tr>';
+
+      for (let j=0; j<tableWidth; j++)
+      {
+        // creating a <td> element, cell
+        grid += '<td></td>';
+      }
+
+      //closing the row
+      grid += '</tr>';
     }
 
-    // adding the row to the table
-    myCustomCanvas.appendChild(row);
-  }
+    //print console to check
+    console.log( 'inside makeGrid: ', tableWidth, tableHeight );
+    //adding the grid to tbody
+    document.getElementsByTagName('tbody')[0].innerHTML = grid;
+  };
 
-  // adding an eventlisten upon click on the grid
-  myCustomCanvas.addEventListener('click', function(evt){
-    evt.target.color = coPic;
-  });
+  document.getElementById('colorPicker').addEventListener('change', function() {
+    colorPicker = document.getElementById('colorPicker');
+  } );
 
-}
+  document.getElementById('pixelCanvas').addEventListener('click', function(evt) {
+    evt.target.style.backgroundColor = colorPicker.value;
+  }, false );
+
+  document.getElementById('pixelCanvas').addEventListener('dblclick', function(evt) {
+    console.log( 'double click' );
+    evt.target.style.backgroundColor = '';
+  }, false );
+
+  document.getElementById( 'submitButton' ).addEventListener( 'click', function(evt){
+    evt.preventDefault();
+    // assigning height and width from input form
+    const tableHeight = document.getElementById( 'inputHeight' ).value;
+    const tableWidth = document.getElementById( 'inputWidth' ).value;
+    makeGrid(tableHeight,tableWidth);
+  } );
