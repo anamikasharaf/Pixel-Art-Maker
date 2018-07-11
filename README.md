@@ -18,7 +18,7 @@
  
  The style page
  
- A Preview of the fun Pixel Art Maker
+ A preview of the fun Pixel Art Maker
  
  ![image](https://github.com/anamikasharaf/Pixel-Art-Maker/blob/master/PixelArtMaker.png)
  
